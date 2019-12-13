@@ -1,0 +1,74 @@
+﻿@model IEnumerable<ClassCoustmer.Models.Student>
+
+@{
+    ViewBag.Title = "Index";
+}
+    <style>
+         #font-size {
+            text-align: center;
+            font-size: 16px;
+        }
+       
+        h2{
+            font-family: Centaur;
+            font-size: 2.1em;
+            text-align: center;
+        }
+        .chuangjian{
+            color: red;
+        }
+       #font-size a:nth-child(1){
+        background-color: rgba(0, 128, 74, 1);
+        color: white;
+        border-radius: 5px;
+        padding: 6px;
+    }
+    
+    #font-size a:nth-child(2){
+        background-color: lightslategrey ;
+        color: white;
+        border-radius: 5px;
+        padding: 6px;
+    }
+     #font-size a:nth-child(3){
+        background-color: red;
+        color: white;
+        border-radius: 5px;
+        padding: 6px;
+    }
+    </style>
+        <h2>学生管理</h2>
+     
+<p>
+    <a href="~/Students/Create" class="chuangjian">创建</a>
+</p>
+
+    <table class="table table-bordered">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClassId)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ClassId)
+                </td>
+                <td id="font-size">
+                    @Html.ActionLink("编辑", "Edit", new { id = item.id }) |
+                    @Html.ActionLink("详情", "Details", new { id = item.id }) |
+                    @Html.ActionLink("删除", "Delete", new { id = item.id })
+                </td>
+            </tr>
+        }
+
+    </table>

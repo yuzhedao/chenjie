@@ -1,0 +1,88 @@
+﻿@model ClassCoustmer.Models.Users
+
+@{
+    Layout = null;
+}
+    <style>
+        .ujh-niebgt {
+           background-image: url('../../images/04.jpeg');
+           background-repeat:no-repeat;
+            position:absolute;
+            width:100%;
+        }
+        .jgtui-juy{
+                position: fixed;
+                width: 300px;
+                height:200px;
+                background-color:#4cff00;
+                left: 40%;
+                top: 150px;
+                opacity: 0.7;
+                border-radius: 40%;
+                text-align:center;
+                z-index:44;
+                
+        }
+        .nayu-sb{
+            line-height:20px;
+            font-size:1.5em;
+        }
+        .fow-egg{
+            display:flex;
+            margin:10px;
+            padding:5px 4px 5px 3px;
+        }
+        .sfe-dc{
+            margin-left:25px;
+        }
+        .foot-jyer{
+            border-radius:10px 39px 10px 39px;
+            background-color:#ffd800;
+            line-height:60px;
+            z-index:-10000;
+        }
+    </style>
+<!DOCTYPE html>
+:<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>登录</title>
+</head>
+<body class="ujh-niebgt">
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="jgtui-juy">
+            <h4 class="nayu-sb">登录</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="fow-egg">
+                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div >
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="fow-egg sfe-dc" >
+                @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div >
+                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <input type="submit" value="登录"  class="foot-jyer "/>
+                </div>
+            </div>
+        </div>
+    }
+</body>
+</html>

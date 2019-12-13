@@ -1,0 +1,61 @@
+*::selection{
+   background: none;}
+*{
+   padding: 0;
+   margin: 0;
+   list-style-type: none;
+}
+
+
+#dox{
+   position: relative;  
+   /* left: auto; */
+   margin: 30px auto;
+   /* background-color:rgb(116, 66, 50); */
+   bottom: 30px;
+}
+li{
+   position: absolute;
+   width:100px;
+  /* opacity: 0; */
+}
+img {
+   width:1353px;
+   position:absolute;
+   /* left:21px; */
+   height:607px;
+   } 
+
+
+.but{
+   border: 5px solid #204b27;
+  width: 90px;
+  border-radius:  6% 80%;
+  transform: rotate(45deg);
+  text-align: center;
+  line-height:50px;
+  /* color:#4a204b; */
+  position: absolute;
+  top:300px;
+  font-weight:bold ;
+  font-size: 30px;
+  color: #44348b;
+  
+  /* animation-name:myself;
+  animation-duration: 20s; */
+  cursor: pointer;
+}
+
+.but:nth-last-child(1){
+   right: 0;
+}
+.but:hover{
+   background: #cf3d11;
+  
+   color: rgb(18, 23, 39);
+}
+/* @keyframes myself{
+  from {rotate:0deg};
+  to{rotate:180deg};
+} */
+
